@@ -50,3 +50,9 @@ function finalizar () {
 
 
 ?>
+
+
+<?php 
+//Incluir una pagina dentro de otra
+include (get_template_directory() . '/pagina.php');
+?>
