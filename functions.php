@@ -16,4 +16,27 @@ function print_r_return( $a ) {
 $b = print_r_return( array( 'a1' => 'a2', 'b1' => 'b2') );
 echo 'length = ' . strlen( $b ) . " | string = " . $b;
 
+//Validaciones por IP
+function obtenerDireccionIP() {
+	if (!empty($_SERVER ['HTTP_CLIENT_IP'] ))
+		$ip=$_SERVER ['HTTP_CLIENT_IP'];
+	elseif (!empty($_SERVER ['HTTP_X_FORWARDED_FOR'] ))
+		$ip=$_SERVER ['HTTP_X_FORWARDED_FOR'];
+	else
+		$ip=$_SERVER ['REMOTE_ADDR'];
+
+	return $ip;
+}
+function restringirConjuntoIps($ips) {
+	$ipCliente = obtenerDireccionIP();
+ 	
+	if (in_array($ipCliente,$ips)) {
+		return true;
+	} else {
+		header('location: http://direccion_envio_salida');
+		exit;
+	}
+}
+
+
 ?>
