@@ -49,7 +49,7 @@ function finalizar () {
 }
 
 // Permite embeber codigo PHP en el cuerpo de los post y las paginas de wordpress
-//	ejemplo: [insert_php] echo adrotate_group(9); [/insert_php]
+//	ejemplo: [insert_php] echo "hola mundo"; [/insert_php]
 add_filter( 'the_content', 'exectPHP_content', 9 );
 function exectPHP_content($content)
 {
