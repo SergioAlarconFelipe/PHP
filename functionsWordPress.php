@@ -69,13 +69,13 @@ function exectPHP_content($content)
 } # function will_bontrager_insert_php()
 
 // RSS
-// [2017.07.03] salarcon: Desactivar RSS
+// Desactivar RSS
 //add_action('do_feed_rss2', 'wpb_disable_feed', 1);
 function wpb_disable_feed() {
 	wp_die( __('No feed available,please visit our <a href="'. get_bloginfo('url') .'">homepage</a>!') );
 }
 
-// [2017.07.03] salarcon: Evitar post protected en el RSS
+// Evitar post protected en el RSS
 function wpb_password_post_filter( $where = '' ) {
 	if (!is_single() && !is_admin()) {
 		$where .= " AND post_password = ''";
