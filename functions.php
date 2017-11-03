@@ -74,17 +74,14 @@ function sanear_string1($string){
 	
 	return $string;
 }
-function sanear_string2 ($cadena){
-	$originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ
-ßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ';
-	$modificadas = 'aaaaaaaceeeeiiiidnoooooouuuuy
-bsaaaaaaaceeeeiiiidnoooooouuuyybyRr';
+function normaliza ($cadena){
+	$originales = 	'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ';
+	$modificadas = 	'aaaaaaaceeeeiiiidnoooooouuuuybsaaaaaaaceeeeiiiidnoooooouuuyybyRr';
 	$cadena = utf8_decode($cadena);
 	$cadena = strtr($cadena, utf8_decode($originales), $modificadas);
 	$cadena = strtolower($cadena);
 	return utf8_encode($cadena);
 }
-
 
 //Validaciones por IP
 function obtenerDireccionIP() {
