@@ -10,15 +10,13 @@ function print_r_return( $a ) {
 	return print_r( $a, true );
 }
 
-//No puede funcionar
+echo '<h2>Prueba 1</h2>';
 $a = var_dump_return( array( 'a1' => 'a2', 'b1' => 'b2') );
 echo 'length = ' . strlen( $a ) . " | string = " . $a;
 
-$b = var_dump_return( array( 'a1' => 'a2', 'b1' => 'b2') );
+echo '<h2>Prueba 2</h2>';
+$b = print_r_return( array( 'a1' => 'a2', 'b1' => 'b2') );
 echo 'length = ' . strlen( $b ) . " | string = " . $b;
-
-$c = print_r_return( array( 'a1' => 'a2', 'b1' => 'b2') );
-echo 'length = ' . strlen( $c ) . " | string = " . $c;
 
 
 //Sanear strings
