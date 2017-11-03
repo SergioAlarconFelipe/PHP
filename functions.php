@@ -1,20 +1,38 @@
 <?php
-
+//Salida por texto
 function var_dump_return( $a ) {
 	ob_start();
 	var_dump( $a );
 	return ob_get_clean();
 }
 
+function print_r_return( $a ) {
+	return print_r( $a, true );
+}
+
+//No puede funcionar
 $a = var_dump_return( array( 'a1' => 'a2', 'b1' => 'b2') );
 echo 'length = ' . strlen( $a ) . " | string = " . $a;
 
-function print_r_return( $a ) {
-	return ( $a, true );
+$b = var_dump_return( array( 'a1' => 'a2', 'b1' => 'b2') );
+echo 'length = ' . strlen( $b ) . " | string = " . $b;
+
+$c = print_r_return( array( 'a1' => 'a2', 'b1' => 'b2') );
+echo 'length = ' . strlen( $c ) . " | string = " . $c;
+
+
+//Sanear strings
+function normaliza ($cadena){
+    $originales = 'ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ
+ßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ';
+    $modificadas = 'aaaaaaaceeeeiiiidnoooooouuuuy
+bsaaaaaaaceeeeiiiidnoooooouuuyybyRr';
+    $cadena = utf8_decode($cadena);
+    $cadena = strtr($cadena, utf8_decode($originales), $modificadas);
+    $cadena = strtolower($cadena);
+    return utf8_encode($cadena);
 }
 
-$b = print_r_return( array( 'a1' => 'a2', 'b1' => 'b2') );
-echo 'length = ' . strlen( $b ) . " | string = " . $b;
 
 //Validaciones por IP
 function obtenerDireccionIP() {
