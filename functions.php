@@ -105,5 +105,27 @@ function restringirConjuntoIps($ips) {
 	}
 }
 
+// Medir tiempo de trabajo
+function medirTiempo () {
+	// Iniciar contador
+	$inicio = microtime(true);
+	
+	// Parara para probar el codigo
+	usleep( 5000000 );	// Igual que "sleep( 5 );"
+	
+	// Parar contador y mostrar salida
+	$fin = microtime(true);
+	$salida = '';
+	$seg_ini = $fin - $inicio;
+	$horas = floor($seg_ini/3600);
+	$minutos = floor(($seg_ini-($horas*3600))/60);
+	$segundos = round($seg_ini-($horas*3600)-($minutos*60), 2);
+
+	if(!empty($horas))
+		$salida .= $horas.' hora(s), ';
+	$salida .= $minutos. ' minuto(s) y '.$segundos.' segundo(s)';
+
+	echo $salida;
+}
 
 ?>
