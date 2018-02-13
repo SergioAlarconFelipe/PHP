@@ -110,7 +110,7 @@ function medirTiempo () {
 	// Iniciar contador
 	$inicio = microtime(true);
 	
-	// Parara para probar el codigo
+	// Parada para probar el codigo
 	usleep( 5000000 );	// Igual que "sleep( 5 );"
 	
 	// Parar contador y mostrar salida
