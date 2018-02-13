@@ -128,4 +128,21 @@ function medirTiempo () {
 	echo $salida;
 }
 
+/**
+ *  Inserta a item in the indicated array
+ *  Example to use:
+ *      $arr = insertInArrayAtPosition( array( 'a', 'b', 'c' ), 'i', 1 );
+ *      $arr = insertInArrayAtPosition( array( 'a', 'b', 'c' ), array( 'i1', 'i2' ), 1 );
+ * 
+ *  @param $array   Array where insert the indicated item
+ *  @param $insert  Item to insert
+ *  @param $pos     Position where insert the indicated item
+ * 
+ *  @return	        Array with the inserted item
+ */
+function insertInArrayAtPosition( $array, $insert, $pos ) {
+    array_splice( $array, $pos, 0, $insert );
+    return $array;
+}
+
 ?>
