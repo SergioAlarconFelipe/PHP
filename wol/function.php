@@ -33,7 +33,4 @@ function wol( $broadcast, $mac ) {
         }    
     }
 }
-
-//wol( 'sdz.ddns.net', '00:18:F3:99:ed:20' );
-wol( '90.77.55.216', '00:18:F3:99:ed:20' );
 ?>
