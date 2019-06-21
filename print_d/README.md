@@ -1,3 +1,9 @@
+```php
+<?php
+include 'print_d';
+print_d( 'hola mundo' );
+```
+
 ```
 C:\xampp\htdocs\prueba\index.php: 45 => funct21
 C:\xampp\htdocs\prueba\src\class2.php: 24 => funct11
