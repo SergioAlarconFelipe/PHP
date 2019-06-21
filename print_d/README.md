@@ -1,4 +1,6 @@
-Example to debugger one variable
+# Use example
+
+## Example to debugger one variable
 ```php
 <?php
 include 'print_d';
@@ -14,7 +16,7 @@ C:\xampp\htdocs\prueba\src\class1.php: 81
     hola mundo
 ```
 
-Example debug multiple variables
+## Example debug multiple variables
 ```php
 <?php
 include 'print_d';
