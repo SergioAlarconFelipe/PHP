@@ -34,14 +34,12 @@ include 'print_d';
 print_d( 'hola mundo', [ 'name' => 'n1', 'title' => 't1' ] );
 ```
 Result
-<pre style="text-align: left;">
-<div style="font-weight: bold;font-size: large;text-decoration: underline;"><b><u>t1</u></b></div>
-<div style="font-weight: bold;">C:\xampp\htdocs\prueba\index.php: 45 => funct21</div>
-<div style="font-weight: bold;">C:\xampp\htdocs\prueba\src\class2.php: 24 => funct11</div>
-<div style="font-weight: bold;">C:\xampp\htdocs\prueba\src\class1.php: 81</div>
-  <div style="padding-left: 16px;"><u>n1</u> [string (10)]: </div>
-    <div style="padding-left: 32px;">hola mundo</div>
-</pre>
+```
+t1
+/var/www/clients/client1/web4/web/modulos/gestion_pedidos/pedidos.php: 6
+  n1 [string (10)]: 
+    hola mundo
+```
 
 ## Example debug multiple variables
 Code
