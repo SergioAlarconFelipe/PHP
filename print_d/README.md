@@ -1,13 +1,24 @@
 # Use example
 
+## Parameters
+1: Element to debuger.
+2: Optionals options.
+  Array de parametros sobre que mostrar de la variable:
+  <ul>
+	  	<li>'name'		=> String en el que indicamos el nombre de la variable indicada</li>
+		  <li>'return'	=> String en el que indicamos si se imprimira o se devolvera el resultado</li>
+  		<li>'title'		=> String que sera el titulo de la variable</li>
+	  	<li>'args'		=> Boolean que indica si nostramos o no los argumentos de cada funcion llamada</li>
+  </ul>
+
 ## Example to debugger one variable
+Code
 ```php
 <?php
 include 'print_d';
 print_d( 'hola mundo' );
 ```
-
-Complete trace
+Result
 ```
 C:\xampp\htdocs\prueba\index.php: 45 => funct21
 C:\xampp\htdocs\prueba\src\class2.php: 24 => funct11
@@ -16,14 +27,30 @@ C:\xampp\htdocs\prueba\src\class1.php: 81
     hola mundo
 ```
 
+Code
+```php
+<?php
+include 'print_d';
+print_d( 'hola mundo', [ 'name' => 'n1', 'title' => 't1' ] );
+```
+Result
+<pre style="text-align: left;">
+<div style="font-weight: bold;font-size: large;text-decoration: underline;"><b><u>t1</u></b></div>
+<div style="font-weight: bold;">C:\xampp\htdocs\prueba\index.php: 45 => funct21</div>
+<div style="font-weight: bold;">C:\xampp\htdocs\prueba\src\class2.php: 24 => funct11</div>
+<div style="font-weight: bold;">C:\xampp\htdocs\prueba\src\class1.php: 81</div>
+  <div style="padding-left: 16px;"><u>n1</u> [string (10)]: </div>
+    <div style="padding-left: 32px;">hola mundo</div>
+</pre>
+
 ## Example debug multiple variables
+Code
 ```php
 <?php
 include 'print_d';
 prints_d( 'hola mundo', 25, [ -2 ] );
 ```
-
-Complete trace
+Result
 ```
 C:\xampp\htdocs\prueba\index.php: 45 => funct21
 C:\xampp\htdocs\prueba\src\class2.php: 24 => funct11
