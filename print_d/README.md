@@ -15,7 +15,7 @@
 Code
 ```php
 <?php
-include 'print_d';
+include 'print_debug';
 print_d( 'hola mundo' );
 ```
 Result
@@ -30,7 +30,7 @@ C:\xampp\htdocs\prueba\src\class1.php: 81
 Code
 ```php
 <?php
-include 'print_d';
+include 'print_debug';
 print_d( 'hola mundo', [ 'name' => 'n1', 'title' => 't1' ] );
 ```
 Result
@@ -47,7 +47,7 @@ C:\xampp\htdocs\prueba\src\class1.php: 81
 Code
 ```php
 <?php
-include 'print_d';
+include 'print_debug';
 prints_d( 'hola mundo', 25, [ -2 ] );
 ```
 Result
