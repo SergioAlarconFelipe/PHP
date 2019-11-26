@@ -138,11 +138,45 @@ function medirTiempo () {
  *  @param $insert  Item to insert
  *  @param $pos     Position where insert the indicated item
  * 
- *  @return	        Array with the inserted item
+ *  @return	    Array with the inserted item
  */
 function insertInArrayAtPosition( $array, $insert, $pos ) {
     array_splice( $array, $pos, 0, $insert );
     return $array;
+}
+
+/**
+ *  Format a number of seconds to an array [ d, h, m, s ]
+ *  
+ *  @param $pos     Integer with seconds to convert
+ *  
+ *  @return	    Array [ d, h, m, s ]
+ */
+function secondsToTime( $seconds ) {
+    // extract days
+    $days = floor( $seconds / ( 60 * 60 * 24 ) );
+    
+    // extract hours
+    $divisor_for_hours = $seconds % ( 60 * 60 * 24 );
+    $hours = floor( $divisor_for_hours / ( 60 * 60 ) );
+    
+    // extract minutes
+    $divisor_for_minutes = $seconds % ( 60 * 60 );
+    $minutes = floor( $divisor_for_minutes / 60 );
+    
+    // extract the remaining seconds
+    $divisor_for_seconds = $divisor_for_minutes % 60;
+    $seconds = ceil( $divisor_for_seconds );
+    
+    // return the final array
+    $obj = array(
+        'd' => ( int ) $days,
+        'h' => ( int ) $hours,
+        'm' => ( int ) $minutes,
+        's' => ( int ) $seconds,
+    );
+    
+    return $obj;
 }
 
 ?>
