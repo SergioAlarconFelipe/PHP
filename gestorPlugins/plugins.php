@@ -4,6 +4,13 @@
 $pluginsPaths = array();
 $pluginsFunctions = array();
 
+// configuracion
+/** 
+ *  If it's true, the functions only have a parameter with a object with multiples parameters
+ *  If it's false, the functions have a multiples parameters
+ */ 
+$parametersAsObject = true;
+
 // Get plugins
 $paths = new DirectoryIterator( getcwd() . '/plugins/' );
 foreach( $paths as $path ) {
@@ -21,11 +28,16 @@ foreach( $pluginsPaths as $path ) {
 // Exec hook
 function execAction( $action = '', $params = array() ) {
 	global $pluginsFunctions;
+	global $parametersAsObject;
 	
 	if( isset( $pluginsFunctions[ $action ] ) ) {
 		foreach( $pluginsFunctions[ $action ] as $priorities ) {
 			foreach( $priorities as $priority => $function ) {
-				call_user_func_array( $function, $params );
+				if( $parametersAsObject ) {
+					call_user_func_array( $function, array( (object) $params ) );
+				} else {
+					call_user_func_array( $function, $params );
+				}
 			}
 		}
 	}
