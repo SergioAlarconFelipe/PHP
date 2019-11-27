@@ -15,13 +15,14 @@ include_once 'plugins.php';
 		<div id="body">
 			<?php
 			//cuerpo
-			execAction('body', array( 'parametro uno', 'parametro dos' ) );
+			execAction('body', array( 'arg1' => 'parametro uno', 'arg2' => 'parametro dos' ) );
 			?>
 		</div>
 		<div id="footer">
 			<?php
 			//pie
-			execAction('footer');
+			execAction('footer1', array( ) );
+			execAction('footer2', array( 4, 2 ) );
 			?>
 		</div>
 	</body>
