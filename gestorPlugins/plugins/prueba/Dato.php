@@ -10,8 +10,8 @@ class Dato {
 		return $this->valor;
 	}
 	
-	function setValor( $valor ) {
-		$this->valor = $valor;
+	function setValor( $valor = 0 ) {
+		$this->valor = $valor->arg1;
 	}
 	
 	function echoValor() {
