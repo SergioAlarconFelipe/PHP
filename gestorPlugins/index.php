@@ -22,7 +22,7 @@ include_once 'plugins.php';
 			<?php
 			//pie
 			execAction('footer1', array( ) );
-			execAction('footer2', array( 4, 2 ) );
+			execAction('footer2', array( 'arg1' => 4, 'arg2' => 2 ) );
 			?>
 		</div>
 	</body>
