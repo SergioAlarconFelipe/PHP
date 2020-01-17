@@ -1,5 +1,8 @@
 ## Changelog
 
+1.1.1   Added color vision for the variables.
+        Added collapsible list of arguments.
+
 1.1.0   Added documentation.
         Added improvements to the code.
 
