@@ -6,9 +6,10 @@
   Array de parametros sobre que mostrar de la variable:
   <ul>
 	  	<li>'name'		=> String en el que indicamos el nombre de la variable indicada</li>
-		  <li>'return'	=> String en el que indicamos si se imprimira o se devolvera el resultado</li>
+		<li>'return'		=> String en el que indicamos si se imprimira o se devolvera el resultado</li>
   		<li>'title'		=> String que sera el titulo de la variable</li>
 	  	<li>'args'		=> Boolean que indica si nostramos o no los argumentos de cada funcion llamada</li>
+		<li>'colors'		=> Boolean que indica si nostramos o no los colores de las variables</li>
   </ul>
 
 ## Example to debugger one variable
