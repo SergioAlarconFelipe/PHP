@@ -32,7 +32,7 @@ Code
 ```php
 <?php
 include 'print_debug';
-print_d( 'hola mundo', [ 'name' => 'n1', 'title' => 't1' ] );
+print_d_options( 'hola mundo', [ 'name' => 'n1', 'title' => 't1' ] );
 ```
 Result
 ```
@@ -49,7 +49,7 @@ Code
 ```php
 <?php
 include 'print_debug';
-prints_d( 'hola mundo', 25, [ -2 ] );
+print_d( 'hola mundo', 25, [ -2 ] );
 ```
 Result
 ```
